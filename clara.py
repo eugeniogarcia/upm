@@ -34,8 +34,10 @@ def mostrar_menu():
     print("0. productos borrar <índice>")
     print("S. Salir")
 
+mostrar_menu()
+    
 while True:
-    mostrar_menu()
+
     opcion = input("Selecciona una opción: ")
 
     if opcion == '1':
