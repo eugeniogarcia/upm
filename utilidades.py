@@ -35,7 +35,7 @@ def es_palindromo(texto: str):
   print (texto)
 
 def max_temperaturas (temperaturas: list[float], umbral: float) -> list[float]:
-    '''Detecta qué mediciones de temperatura han superado el umbral dado'''
+  '''Detecta qué mediciones de temperatura han superado el umbral dado'''
   maximos = []
   for x in temperaturas:
     if x > umbral:
@@ -45,17 +45,21 @@ def max_temperaturas (temperaturas: list[float], umbral: float) -> list[float]:
 
 productos: list[str] = []
 
-def insertar(producto: str) -> None:    '''Añade un producto a la lista'''
+def insertar(producto: str) -> None:   
+  '''Añade un producto a la lista'''
   productos.append(producto)
 
-def borrar(numero: int) -> None:      '''Borra el producto en el índice dado de lista de productos.'''
+def borrar(numero: int) -> None:      
+  '''Borra el producto en el índice dado de lista de productos.'''
   del productos [numero]
 
-def mostrar_productos() -> None:    '''Muestra la lista de productos con sus índices.'''
+def mostrar_productos() -> None:    
+  '''Muestra la lista de productos con sus índices.'''
   for x in productos:
     indice = productos.index(x)
     print("{indice}: {x}")
 
-def cantidad() -> int:    '''Devuelve el número de productos.'''
+def cantidad() -> int:   
+  '''Devuelve el número de productos.'''
   longitud = len(productos)
   print (longitud)
