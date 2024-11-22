@@ -7,13 +7,13 @@ def sumar_numeros(num1, num2):
 
 def euros_a_bitcoins(euros: int | float):
   '''Convierte una cantidad de euros a bitcoins. 1 bitcoin = 44570.17 €'''
-  bitcoin = euros / 44471.78
+  bitcoin = euros / EURO_BITCOIN_RATE
   bitcoin = round(bitcoin, 2)
   return bitcoin
 
 def bitcoins_a_euros(usd: int | float) -> int | float:
   '''Convierte una cantidad de bitcoins a euros. 1 bitcoin = 44570.17 €'''
-  euros = usd * 44471.78
+  euros = usd * EURO_BITCOIN_RATE
   euros = round(euros, 2)
   return euros
 
@@ -59,7 +59,10 @@ def mostrar_productos() -> None:
     indice = productos.index(x)
     print("{indice}: {x}")
 
-def cantidad() -> int:   
+def cantidad() -> None:   
   '''Devuelve el número de productos.'''
   longitud = len(productos)
   print (longitud)
+
+if __name__== "__main__":
+  print(f"El resultado de convertir es: {bitcoins_a_euros(23)}")
