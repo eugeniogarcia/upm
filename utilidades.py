@@ -5,19 +5,19 @@ def sumar_numeros(num1, num2):
     suma = num1 + num2
     return suma
 
-def euros_a_bitcoins(euros: int | float):
+def euros_a_bitcoins(euros: int | float)->float:
   '''Convierte una cantidad de euros a bitcoins. 1 bitcoin = 44570.17 €'''
   bitcoin = euros / EURO_BITCOIN_RATE
   bitcoin = round(bitcoin, 2)
   return bitcoin
 
-def bitcoins_a_euros(usd: int | float) -> int | float:
+def bitcoins_a_euros(usd: int | float) -> float:
   '''Convierte una cantidad de bitcoins a euros. 1 bitcoin = 44570.17 €'''
   euros = usd * EURO_BITCOIN_RATE
   euros = round(euros, 2)
   return euros
 
-def contar_vocales(texto: str):
+def contar_vocales(texto: str)->int:
   '''Devuelve el número de vocales que tiene el texto dado.'''
   vocales = 0
   texto.lower()
@@ -26,13 +26,11 @@ def contar_vocales(texto: str):
       vocales = vocales + 1
   return vocales
 
-def es_palindromo(texto: str):
+def es_palindromo(texto: str)->bool:
   '''Detecta si un texto es palíndromo o no'''
   texto.replace (" ", "")
   texto.lower()
-  texto = texto [::-1]
-
-  print (texto)
+  return texto == texto [::-1]
 
 def max_temperaturas (temperaturas: list[float], umbral: float) -> list[float]:
   '''Detecta qué mediciones de temperatura han superado el umbral dado'''
@@ -40,8 +38,7 @@ def max_temperaturas (temperaturas: list[float], umbral: float) -> list[float]:
   for x in temperaturas:
     if x > umbral:
       maximos = maximos.append(x)
-  print (maximos)
-
+  return maximos
 
 productos: list[str] = []
 
@@ -59,10 +56,9 @@ def mostrar_productos() -> None:
     indice = productos.index(x)
     print("{indice}: {x}")
 
-def cantidad() -> None:   
+def cantidad() -> int:   
   '''Devuelve el número de productos.'''
-  longitud = len(productos)
-  print (longitud)
+  return len(productos)
 
 if __name__== "__main__":
   print(f"El resultado de convertir es: {bitcoins_a_euros(23)}")
