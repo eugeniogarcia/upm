@@ -15,7 +15,7 @@ def bitcoins_a_euros(usd: int | float) -> float:
   '''Convierte una cantidad de bitcoins a euros. 1 bitcoin = 44570.17 €'''
   euros = usd * EURO_BITCOIN_RATE
   euros = round(euros, 2)
-  return euros #simplificar
+  return euros
 
 def contar_vocales(texto: str)->int:
   '''Devuelve el número de vocales que tiene el texto dado.'''
