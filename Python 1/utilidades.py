@@ -1,23 +1,23 @@
-EURO_BITCOIN_RATE = 44471.78
+EURO_BITCOIN_RATE:float = 44471.78
 
 def sumar_numeros(num1, num2):
     '''Suma los dos numeros proporcionados.'''
     suma = num1 + num2
     return suma
 
-def euros_a_bitcoins(euros: int | float):
+def euros_a_bitcoins(euros: int | float)->float:
   '''Convierte una cantidad de euros a bitcoins. 1 bitcoin = 44570.17 €'''
   bitcoin = euros / EURO_BITCOIN_RATE
   bitcoin = round(bitcoin, 2)
   return bitcoin
 
-def bitcoins_a_euros(usd: int | float) -> int | float:
+def bitcoins_a_euros(usd: int | float) -> float:
   '''Convierte una cantidad de bitcoins a euros. 1 bitcoin = 44570.17 €'''
   euros = usd * EURO_BITCOIN_RATE
   euros = round(euros, 2)
-  return euros
+  return euros #simplificar
 
-def contar_vocales(texto: str):
+def contar_vocales(texto: str)->int:
   '''Devuelve el número de vocales que tiene el texto dado.'''
   vocales = 0
   for x in texto.lower():
