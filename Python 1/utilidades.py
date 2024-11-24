@@ -67,7 +67,24 @@ def cantidad() -> int:
     return (longitud)
 
 
+def mostrar_menu():
+    print("Menú Interactivo")
+    print("-"*30)
+    print("convertir euros bitcoins <cantidad>")
+    print("convertir bitcoins euros <cantidad>")
+    print("contar <texto>")
+    print("palindromo <texto>")
+    print("temperaturas <varios números separados por comas> <umbral>")
+    print("cifrar <texto> <desplazamiento>")
+    print("descifrar <texto> <desplazamiento>")
+    print("productos")
+    print("productos nuevo <nombre>")
+    print("productos borrar <índice>")
+    print("S. Salir")
+
 def Menu_interactivo():
+
+
   while True:
     opcion = input()
     elementos = opcion.split()
