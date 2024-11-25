@@ -83,8 +83,8 @@ def mostrar_menu():
     print("S. Salir")
 
 def Menu_interactivo():
-
-
+  mostrar_menu()
+  
   while True:
     opcion = input()
     elementos = opcion.split()
