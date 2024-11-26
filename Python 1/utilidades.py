@@ -27,10 +27,6 @@ def contar_vocales(texto: str)->int:
 
 def es_palindromo(texto: str) -> bool:
   '''Detecta si un texto es palíndromo o no'''
-  #si es una lista lo convertimos a str
-  if isinstance(texto,list):
-    texto=" ".join(texto)
-
   texto = texto.replace(" ", "").lower()
   return texto == texto [::-1]
 
@@ -87,7 +83,7 @@ def mostrar_menu():
     print("salir")
 
 def Menu_interactivo():
-  mostrar_menu()
+
   
   while True:
     opcion = input()
