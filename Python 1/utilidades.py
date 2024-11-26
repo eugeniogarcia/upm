@@ -15,7 +15,7 @@ def bitcoins_a_euros(usd: int | float) -> float:
   '''Convierte una cantidad de bitcoins a euros. 1 bitcoin = 44570.17 €'''
   euros = usd * EURO_BITCOIN_RATE
   euros = round(euros, 2)
-  return euros #simplificar
+  return euros
 
 def contar_vocales(texto: str)->int:
   '''Devuelve el número de vocales que tiene el texto dado.'''
@@ -27,6 +27,9 @@ def contar_vocales(texto: str)->int:
 
 def es_palindromo(texto: str) -> bool:
   '''Detecta si un texto es palíndromo o no'''
+    #si es una lista lo convertimos a str
+  if isinstance(texto,list):
+    texto=" ".join(texto)
   texto = texto.replace(" ", "").lower()
   return texto == texto [::-1]
 
@@ -67,7 +70,24 @@ def cantidad() -> int:
     return (longitud)
 
 
+def mostrar_menu():
+    print("Menú Interactivo")
+    print("-"*30)
+    print("convertir euros bitcoins <cantidad>")
+    print("convertir bitcoins euros <cantidad>")
+    print("contar <texto>")
+    print("palindromo <texto>")
+    print("temperaturas <varios números separados por comas> <umbral>")
+    print("cifrar <texto> <desplazamiento>")
+    print("descifrar <texto> <desplazamiento>")
+    print("productos")
+    print("productos nuevo <nombre>")
+    print("productos borrar <índice>")
+    print("salir")
+
 def Menu_interactivo():
+
+
   while True:
     opcion = input()
     elementos = opcion.split()
