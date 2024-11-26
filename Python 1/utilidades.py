@@ -20,6 +20,7 @@ def bitcoins_a_euros(usd: int | float) -> float:
 def contar_vocales(texto: str)->int:
   '''Devuelve el número de vocales que tiene el texto dado.'''
   vocales = 0
+  texto = "".join(texto)
   for x in texto.lower():
     if x in ("a", "e", "i", "o", "u"):
       vocales = vocales + 1
@@ -27,10 +28,10 @@ def contar_vocales(texto: str)->int:
 
 def es_palindromo(texto: str) -> bool:
   '''Detecta si un texto es palíndromo o no'''
-    #si es una lista lo convertimos a str
   if isinstance(texto,list):
-    texto=" ".join(texto)
-  texto = texto.replace(" ", "").lower()
+    texto = "".join(texto).lower()
+  else:
+    texto = texto.replace(" ", "").lower()
   return texto == texto [::-1]
 
 def max_temperaturas (temperaturas: list[float], umbral: float) -> list[float]:
@@ -57,7 +58,7 @@ def mostrar_productos() -> None:
   indice = -1
   for x in productos:
     indice = productos.index(x)
-    print(f"{indice}: {x}")
+    print (f"{indice}: {x}")
   if indice == -1:
     print ("No hay productos")
 
@@ -86,36 +87,34 @@ def mostrar_menu():
     print("salir")
 
 def Menu_interactivo():
-
-
   while True:
     opcion = input()
     elementos = opcion.split()
     if opcion.startswith("convertir euros bitcoins"):
       print (euros_a_bitcoins(elementos[-1]))
 
-    if opcion.startswith("convertir bitcoins euros"):
+    elif opcion.startswith("convertir bitcoins euros"):
       print(bitcoins_a_euros(elementos [-1]))
     
-    if opcion.startswith("contar"):
+    elif opcion.startswith("contar"):
       print (contar_vocales(elementos [1:]))
     
-    if opcion.startswith("palindromo"):
+    elif opcion.startswith("palindromo"):
       print (es_palindromo(elementos[1:]))
     
-    if opcion.startswith("temperaturas"):
+    elif opcion.startswith("temperaturas"):
       print (max_temperaturas(elementos[1:-2], elementos [-1]))
     
-    if opcion.startswith("productos"):
+    elif opcion.startswith("productos"):
       print (mostrar_productos)
     
-    if opcion.startswith("productos nuevo"):
+    elif opcion.startswith("productos nuevo"):
       print (insertar(elementos[-1]))
     
-    if opcion.startswith("productos borrar"):
+    elif opcion.startswith("productos borrar"):
       print (borrar(elementos[-1]))
     
-    if opcion == "salir":
+    elif opcion == "salir":
       print("¡Adiós!")
     
     else:
